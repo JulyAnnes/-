@@ -1,0 +1,55 @@
+.ct_r_dim {
+	/*width: 1640px;*/
+	width: 86%;
+	height: 900px;
+	margin-top: 20px;
+	float: right;
+}
+.ct_r_dim .adm_top {
+	width: 100%;
+	height: 80px;
+	position: relative;
+	border-bottom: 1px solid #03152D;
+}
+.adm_top .btn {
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	background-color: #333333;
+	color: #8C9999;
+}
+.adm_botm {
+	width: 100%;
+	margin-top: 2px;
+}
+.adm_botm ul {
+	list-style-type: none;
+}
+.adm_botm ul li {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	border-bottom: 1px solid  #03152D;
+	color: #999;
+	font-size: 20px;
+}
+.adm_botm ul li.first {
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+	font-size: 24px;
+}
+.adm_botm ul li span {
+	display: block;
+	float: left;/*
+	width: 150px;*/
+	width: 10%;
+	text-align: center;
+}
+.adm_botm ul li span button {
+	width: 40px;
+	height: 25px;
+	margin: 5px;
+	color: #8C9999;
+	background-color: #333333;
+}

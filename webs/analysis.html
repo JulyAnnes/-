@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/all.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/analysis.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	    <script src="../javscript/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+		$(document).ready(function(){
+			$(".ct_l li").mouseenter(function(){
+				$(this).children("ul").stop(true,false).slideDown();
+			});
+			$(".ct_l li").mouseleave(function(){
+				$(this).children("ul").stop(true,false).slideUp();
+			});
+		});
+		window.onload = function(){
+			var btns = document.getElementById("select_top").getElementsByTagName("button");//获取所有的选项卡
+			var divs = document.getElementById("sele_bottom").getElementsByTagName("div");//获取所有选项卡所对应的盒子
+			//遍历选项卡
+			for(var i=0;i<btns.length;i++)
+			{
+				btns[i].index = i;
+				btns[i].onclick = function(){
+					
+					for(var j=0;j<btns.length;j++)
+					{
+						btns[j].className ="";
+					}
+					this.className = "current";
+					for(var i=0;i<divs.length;i++)
+					{
+						divs[i].style.display = "none";
+					}
+					divs[this.index].style.display = "block";
+				}
+			}
+			
+		}
+	</script>
+	</head>
+	<body>
+	    <!--
+	    	头部：校徽/三个按钮 （注销）
+	    	
+	    -->
+	    <div class="head clearfix">
+	    	<div class="h_left">
+	    		<div class="an_logo"><img src="../img/logo.jpg"/></div>
+	    		<div class="h_cut"><span></span></div>
+	    		<div class="school">
+	    			安阳工学院
+	    			<span>(ANYANG INSTITUTE OF TECHNOLOGY)</span>
+	    		</div>
+	    	</div>
+	    	<div class="h_right">
+	    		<ul>
+	    			<li>
+	    				<a href=""><i class="fa fa-gear"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-user-circle"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-power-off"></i></a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!--
+	    	头部结束
+	    -->
+	    <!--
+	    	主体部分
+	    	分为左中右
+	    -->
+	    <div class="content clearfix">
+	    	<div class="ct_l" id="ct_l">
+	    		<ul>
+	    			<li>
+	    				<a href="">流量监控</a>
+	    				<ul>
+	    					<li><a href="">实时监控</a></li>
+	    					<li><a href="">流量分析</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="analysis.html">威胁分析</a>
+	    			</li>
+	    			<li>
+	    				<a href="">事件分析</a>
+	    				<ul>
+	    					<li><a href="thing_analysis.html">事件关联</a></li>
+	    					<li><a href="thing_search.html">事件检索</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="">配置管理</a>
+	    				<ul>
+	    					<li><a href="adm.html">资产配置管理</a></li>
+	    				</ul>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    	<div class="ct_c">
+	    		<div class="ct_c_top" id="select_top">
+	    			<ul>
+	    				<li><button>端口扫描</button></li>
+	    				<li><button>暴力破解</button></li>
+	    				<li><button>口令探测</button></li>
+	    				<li class="top_last"><button>木马后门</button></li>
+	    				<li><button>拒绝服务</button></li>
+	    				<li><button>溢出攻击</button></li>
+	    				<li><button>应用漏洞</button></li>
+	    				<li class="top_last"><button>杂项攻击</button></li>
+	    			</ul>
+	    		</div>
+	    		<div class="ct_c_bottom" id="sele_bottom">
+	    			<div class="show" id="box1" >
+	    			<ul>
+	    				<li class="bt_first"><span>序号1</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box2">
+	    			<ul>
+	    				<li class="bt_first"><span>序号2</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box3">
+	    			<ul>
+	    				<li class="bt_first"><span>序号3</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box4">
+	    			<ul>
+	    				<li class="bt_first"><span>序号4</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box5">
+	    			<ul>
+	    				<li class="bt_first"><span>序号5</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box6">
+	    			<ul>
+	    				<li class="bt_first"><span>序号6</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    			<div id="box7">
+	    			<ul>
+	    				<li class="bt_first"><span>序号7</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul></div>
+	    			<div id="box8">
+	    			<ul>
+	    				<li class="bt_first"><span>序号8</span><span>源IP</span><span>目的IP</span><span>首次发现时间</span><span>协议</span><span>事件名称</span><span>攻击特征</span><span>级别</span><span>时间</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-11 19:13:59.0</span><span>TCP</span><span class="sencond_height">ssh password crack</span ><span class="sencond_height">SSH-2.0-OpenSSH_5.3\r\h </span><span>高</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>2</span><span>192.168.13.1</span><span>89.163.161.226</span><span class="sencond_height">2017-07-12 08:59:54.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span >严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>3</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:57:34.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    				<li><span>4</span><span>192.168.13.1</span><span>95.211.223.51</span><span class="sencond_height">2017-07-12 08:44:12.0</span><span>UDP</span><span class="sencond_height">ET P2PeDonkeyserve...</span><span>&nbsp;</span><span>严重</span><span class="sencond_height">2017-07-11 19:13:59.0</span></li>
+	    			</ul>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</body>
+</html>

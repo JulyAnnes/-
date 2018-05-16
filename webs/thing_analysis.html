@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/all.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/analysis.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/thing_analysis.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	</head>
+	<script src="../javscript/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$(".ct_l li").mouseenter(function(){
+				$(this).children("ul").stop(true,false).slideDown();
+			});
+			$(".ct_l li").mouseleave(function(){
+				$(this).children("ul").stop(true,false).slideUp();
+			});
+		});
+		window.onload = function(){
+			var search = document.getElementById("search");
+			var dispre = document.getElementById("dispre");
+			search.oninput = search.onpropertychange = function(){
+				
+				if(this.value == ""){
+					dispre.style.display = "block";
+				}
+				else {
+					dispre.style.display = "none";
+				}
+			}
+		}
+	</script>
+	<body>
+	    <!--
+	    	头部：校徽/三个按钮 （注销）
+	    	
+	    -->
+	    <div class="head .clearfix">
+	    	<div class="h_left">
+	    		<div class="an_logo"><img src="../img/logo.jpg"/></div>
+	    		<div class="h_cut"><span></span></div>
+	    		<div class="school">
+	    			安阳工学院
+	    			<span>(ANYANG INSTITUTE OF TECHNOLOGY)</span>
+	    		</div>
+	    	</div>
+	    	<div class="h_right">
+	    		<ul>
+	    			<li>
+	    				<a href=""><i class="fa fa-gear"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-user-circle"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-power-off"></i></a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!--
+	    	头部结束
+	    -->
+	    <!--
+	    	主体部分
+	    	分为左中右
+	    -->
+	    <div class="content clearfix">
+	    	<div class="ct_l" id="ct_l">
+	    		<ul>
+	    			<li>
+	    				<a href="">流量监控</a>
+	    				<ul>
+	    					<li><a href="">实时监控</a></li>
+	    					<li><a href="">流量分析</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="analysis.html">威胁分析</a>
+	    			</li>
+	    			<li>
+	    				<a href="">事件分析</a>
+	    				<ul>
+	    					<li><a href="thing_analysis.html">事件关联</a></li>
+	    					<li><a href="thing_search.html">事件检索</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="">配置管理</a>
+	    				<ul>
+	    					<li><a href="adm.html">资产配置管理</a></li>
+	    				</ul>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    	<div class="ct_th_r">
+	    		<div class="r_th_top">
+	    			<div class="top_search">
+	    				<input type="text" id="search" /><label for="search" id="dispre" class="lit_se">搜索</label>
+	    				<i class="fa fa-search"></i>
+	    			</div>
+	    			<div class="top_list">
+	    				<ul>
+	    					<li>攻击源关联</li>
+	    					<li>攻击目的关联</li>
+	    					<li>事件关联</li>
+	    					<li class="last">开始时间<sapn>至</sapn>结束时间</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+	    		<div class="r_th_bottom">
+	    			<ul>
+	    				<li class="first"><span class="first_sp">序号</span><span>时间</span><span>源地址</span><span class="first_thing">事件</span><span>目的地址</span></li>
+	    				<li><span class="first_sp">1</span><span>2017-11-16 14:33:01</span><span>192.168.13.1</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">2</span><span>2017-11-16 14:33:02</span><span>192.168.13.2</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">3</span><span>2017-11-16 14:33:03</span><span>192.168.13.3</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">4</span><span>2017-11-16 14:33:04</span><span>192.168.13.4</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">5</span><span>2017-11-16 14:33:05</span><span>192.168.13.5</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">6</span><span>2017-11-16 14:33:06</span><span>192.168.13.6</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">7</span><span>2017-11-16 14:33:07</span><span>192.168.13.7</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    				<li><span class="first_sp">8</span><span>2017-11-16 14:33:08</span><span>192.168.13.8</span><span class="first_thing sencond_height">ET POLICY Http Client Body contains pwd= in cleartext</span><span>202.119.160.109</span></li>
+	    			</ul>
+	    		</div>
+	    	</div>
+	    </div>
+	</body>
+</html>

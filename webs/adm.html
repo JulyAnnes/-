@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/all.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/analysis.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/adm.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	</head>
+	<script src="../javscript/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$(".ct_l li").mouseenter(function(){
+				$(this).children("ul").stop(true,false).slideDown();
+			});
+			$(".ct_l li").mouseleave(function(){
+				$(this).children("ul").stop(true,false).slideUp();
+			});
+		});
+	</script>
+	<body>
+	    <!--
+	    	头部：校徽/三个按钮 （注销）
+	    	
+	    -->
+	    <div class="head .clearfix">
+	    	<div class="h_left">
+	    		<div class="an_logo"><img src="../img/logo.jpg"/></div>
+	    		<div class="h_cut"><span></span></div>
+	    		<div class="school">
+	    			安阳工学院
+	    			<span>(ANYANG INSTITUTE OF TECHNOLOGY)</span>
+	    		</div>
+	    	</div>
+	    	<div class="h_right">
+	    		<ul>
+	    			<li>
+	    				<a href=""><i class="fa fa-gear"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-user-circle"></i></a>
+	    			</li>
+	    			<li>
+	    				<a href=""><i class="fa fa-power-off"></i></a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!--
+	    	头部结束
+	    -->
+	    <!--
+	    	主体部分
+	    	分为左中右
+	    -->
+	    <div class="content .clearfix">
+	    	<div class="ct_l" id="ct_l">
+	    		<ul>
+	    			<li>
+	    				<a href="">流量监控</a>
+	    				<ul>
+	    					<li><a href="">实时监控</a></li>
+	    					<li><a href="">流量分析</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="analysis.html">威胁分析</a>
+	    			</li>
+	    			<li>
+	    				<a href="">事件分析</a>
+	    				<ul>
+	    					<li><a href="thing_analysis.html">事件关联</a></li>
+	    					<li><a href="thing_search.html">事件检索</a></li>
+	    				</ul>
+	    			</li>
+	    			<li>
+	    				<a href="">配置管理</a>
+	    				<ul>
+	    					<li><a href="adm.html">资产配置管理</a></li>
+	    				</ul>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    	<div class="ct_r_dim">
+	    		<div class="adm_top">
+	    			<input type="button" value="新增" class="btn" />
+	    		</div>
+	    		<div class="adm_botm">
+	    			<ul>
+	    				<li class="first"><span>序号</span><span>内网IP</span><span>设备类型</span><span>业务系统</span><span>外网IP</span><span>域名</span><span>开发单位</span><span>负责人</span><span>电话</span><span>操作</span></li>
+	    				<li><span>1</span><span>192.168.13.1</span><span>路由器</span><span>507渗透网</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span><button>修改</button><button>删除</button></span></li>
+	    			</ul>
+	    		</div>
+	    	</div>
+	    </div>
+	</body>
+</html>

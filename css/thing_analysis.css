@@ -1,0 +1,116 @@
+ .ct_th_r {
+ 	margin-top: 20px;/*
+ 	width: 1640px;*/
+ 	width: 86%;
+ 	height: 820px;
+ 	border: 1px solid #03152D;
+ 	float: right;
+ 	padding: 20px 20px;
+ }
+.ct_th_r .r_th_top {
+	width: 100%;
+	height: 89px;
+    border-bottom: 1px solid #666666;
+}
+.ct_th_r .r_th_top .top_search {
+	width: 120px;
+	height: 89px;
+	float: left;
+	position: relative;
+}
+.ct_th_r .r_th_top .top_search input {
+	position: absolute;
+	top: 35px;
+	left: 5px;
+	width: 90px;
+	height: 30px;
+	float: left;
+	border-radius:4px;
+	background-color: #40617A;
+	padding-left: 5px;
+	font-size: 8px;
+	color: #6C767E;
+}
+.ct_th_r .r_th_top .top_search i {
+	position: absolute;
+	top: 40px;
+	right: 15px;
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: 100;
+	color: #6C767E;
+}
+.ct_th_r .r_th_top .top_search  .lit_se {
+	width: 80px;
+	height: 30px;
+	position: absolute;
+	top: 40px;
+	left: 20px;
+}
+.ct_th_r .r_th_top .top_list {
+	/*width: 1500px;*/
+	width: 92%;
+	float: right;
+	height: 89px;
+}
+.ct_th_r .r_th_top .top_list ul {
+	list-style-type: none;
+}
+.ct_th_r .r_th_top .top_list li {
+	list-style: none;
+	float: left;/*
+	width: 367px;*/
+	width: 24%;
+	line-height: 70px;
+	margin-right: 10px;
+	border-radius: 25px;
+	background-color: #23283C;
+	text-align: center;
+	font: 400 24px/70px "微软雅黑";
+	color: #999999;
+}
+.ct_th_r .r_th_top .top_list li.last {
+	margin-right: 0;
+}
+.ct_th_r .r_th_bottom {
+	width: 100%;
+	height: 600px;
+	margin-top: 20px;
+}
+.ct_th_r .r_th_bottom ul {
+	list-style-type: none;
+}
+.ct_th_r .r_th_bottom ul li{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #03152D;
+}
+.ct_th_r .r_th_bottom ul li {
+	line-height: 50;
+	color: #999;
+}
+.ct_th_r .r_th_bottom ul li.first {
+	height: 40px;
+	color: #fff;
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+}
+.ct_th_r .r_th_bottom ul li.sencond_height {
+	line-height: 24px;
+}
+.ct_th_r .r_th_bottom ul li span {
+	display: block;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	width: 300px;
+}
+.content .ct_th_r .r_th_bottom ul li span.first_sp {
+	width: 150px;
+}
+.ct_th_r .r_th_bottom ul li span.first_thing {
+	width: 550px;
+}
